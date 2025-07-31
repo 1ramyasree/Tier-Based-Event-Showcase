@@ -28,7 +28,8 @@ export default function SetTierPage() {
 
   return (
     <main className="p-6">
-      <h1 className="text-2xl font-bold mb-4">Your current tier: {user.unsafeMetadata?.tier || 'none'}</h1>
+      <h1 className="text-2xl font-bold mb-4">Your current tier: {(user?.unsafeMetadata?.tier as string) || 'none'}</h1>
+
 
         <div className="flex gap-4">
     <button
