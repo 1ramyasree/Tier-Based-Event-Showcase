@@ -1,6 +1,4 @@
-import type { ClerkProviderProps } from '@clerk/nextjs'
-
-const clerkConfig: ClerkProviderProps = {
+const clerkConfig = {
   signInUrl: '/sign-in',
   signUpUrl: '/sign-up',
   afterSignInUrl: '/events',
