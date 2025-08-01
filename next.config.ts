@@ -2,9 +2,8 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   experimental: {
-    serverActions: {
-      enabled: true,
-    },
+    serverActions: true,
+
   },
 };
 
