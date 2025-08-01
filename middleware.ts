@@ -1,10 +1,12 @@
 // middleware.ts
-// Temporary: Disable Clerk middleware for production setup
+import { authMiddleware } from "@clerk/nextjs/server";
 
-import { NextResponse } from "next/server";
-import type { NextRequest } from "next/server";
+export default authMiddleware({
+  publicRoutes: ["/", "/sign-in(.*)", "/sign-up(.*)"],
+});
 
-export function middleware(req: NextRequest) {
-  return NextResponse.next();
-}
+export const config = {
+  matcher: ["/((?!.*\\..*|_next).*)", "/", "/(api|trpc)(.*)"],
+};
+
 
