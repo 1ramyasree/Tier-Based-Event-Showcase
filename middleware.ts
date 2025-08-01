@@ -1,12 +1,10 @@
 // middleware.ts
-import { authMiddleware } from "@clerk/nextjs/server";
-
-export default authMiddleware({
-  publicRoutes: ["/", "/sign-in(.*)", "/sign-up(.*)"],
-});
+export function middleware() {
+return;
+}
 
 export const config = {
-  matcher: ["/((?!.*\\..*|_next).*)", "/", "/(api|trpc)(.*)"],
+matcher: ["/((?!_next|.\..).*)"],
 };
 
 
