@@ -29,7 +29,8 @@ return (
 {["free", "silver", "gold", "platinum"].map((t) => (
 <button
 key={t}
-className={px-4 py-2 rounded ${ tier === t ? "bg-blue-500 text-white" : "bg-gray-200" }}
+className={`px-4 py-2 rounded ${tier === t ? "bg-blue-500 text-white" : "bg-gray-200"}`}
+
 onClick={() => setTier(t)}
 >
 {t}
