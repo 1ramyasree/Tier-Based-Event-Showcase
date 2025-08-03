@@ -12,15 +12,18 @@ const [error, setError] = useState("");
 
 const handleSubmit = async () => {
 try {
-await user?.setMetadata({
-  publicMetadata: { tier },
-});
-
-router.push("/events");
+  if (user) {
+    await user.update({
+      publicMetadata: { tier },
+    });
+    router.push("/events");
+  } else {
+    setError("User not found");
+  }
 } catch (err) {
-console.error(err);
-setError("❌ Error setting tier");
+  setError("Error setting tier");
 }
+
 };
 
 return (
