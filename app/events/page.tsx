@@ -13,7 +13,9 @@ return (
 <div className="p-6">
 <h1 className="text-2xl font-bold mb-4">🎉 Events Page</h1>
 <p>Welcome, {user?.emailAddresses[0]?.emailAddress}</p>
-<p>Your Tier: <strong>{tier}</strong></p>
+{tier && (
+
+<p> Your Tier: <strong>{tier}</strong> </p> )}
 </div>
 );
 }
