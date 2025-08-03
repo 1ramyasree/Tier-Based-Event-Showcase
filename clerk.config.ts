@@ -1,8 +1,10 @@
-const clerkConfig = {
-  signInUrl: '/sign-in',
-  signUpUrl: '/sign-up',
-  afterSignInUrl: '/events',
-  afterSignUpUrl: '/events',
-}
+import { clerkMiddleware } from "@clerk/nextjs/server";
+import { authMiddleware } from "@clerk/nextjs";
 
-export default clerkConfig
+export default authMiddleware({
+  publicRoutes: ["/", "/sign-in(.*)", "/sign-up(.*)"],
+});
+
+export const config = {
+  matcher: ["/((?!.*\\..*|_next).*)", "/"],
+};
