@@ -14,7 +14,7 @@ const handleSubmit = async () => {
 try {
 if (user) {
 await user.update({
-publicMetadata: { tier }
+unsafeMetadata: { tier }
 });
 router.push('/events');
 } else {
