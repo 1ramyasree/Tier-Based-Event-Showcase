@@ -21,7 +21,7 @@ router.push('/events');
 setError('User not found');
 }
 } catch (err) {
-console.error('Failed to set metadata:', err);
+console.error('Error updating user:', err);
 setError('Error setting tier');
 }
 };
