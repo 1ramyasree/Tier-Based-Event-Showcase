@@ -12,9 +12,10 @@ const [error, setError] = useState("");
 
 const handleSubmit = async () => {
 try {
-await user?.update({
-publicMetadata: { tier },
+await user?.setMetadata({
+  publicMetadata: { tier },
 });
+
 router.push("/events");
 } catch (err) {
 console.error(err);
